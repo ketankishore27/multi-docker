@@ -15,7 +15,7 @@ after_success:
  - docker build -t ketankishore27/multi-server ./server
  - docker build -t ketankishore27/multi-worker ./worker
 
- - echo "$DOCKER_PASSWORD" | winpty docker login -u "$DOCKER_ID" --password-stdin
+ - docker login -u "$DOCKER_ID" -p "$DOCKER_PASSWORD"
 
  - docker push ketankishore27/multi-client
  - docker push ketankishore27/multi-nginx
